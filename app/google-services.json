@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1083333069544",
+    "project_id": "broadcast-app01",
+    "storage_bucket": "broadcast-app01.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1083333069544:android:4f44543735592a8750175d",
+        "android_client_info": {
+          "package_name": "com.therawking.broadcast"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB0jmIQzCpNWlX3T15osZK04Oa9cVbF3dc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
