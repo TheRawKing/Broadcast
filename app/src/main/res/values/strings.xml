@@ -9,4 +9,7 @@
     <string name="invalid_username">Not a valid username</string>
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
+
+    <string name="share_message">"Hey there, try this new broadcasting application.\nIt is super fun to use, I'm already enjoying my time on this app.\nHere's the downloading link. Try it by yourself.\n \nwww.google.co.in"</string>
+
 </resources>

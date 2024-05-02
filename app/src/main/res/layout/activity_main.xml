@@ -5,15 +5,96 @@
     android:background="@color/white"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:theme="@style/Base.Theme.Broadcast">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="First Android App"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/MyToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/colorPrimary"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?attr/actionBarTheme"
+            app:title="Broadcast"
+            app:titleTextColor="@color/white"/>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/newFAB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="25dp"
+        android:layout_marginBottom="27dp"
+        android:clickable="true"
+        app:backgroundTint="@color/lavender_0"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/icon_add" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/joinBct"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="18dp"
+        android:clickable="true"
+        android:visibility="invisible"
+        app:backgroundTint="@color/lavender_0"
+        app:layout_constraintBottom_toTopOf="@+id/createBct"
+        app:layout_constraintEnd_toEndOf="@+id/newFAB"
+        app:srcCompat="@drawable/icon_join_a_channel" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/createBct"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="18dp"
+        android:clickable="true"
+        android:visibility="invisible"
+        app:backgroundTint="@color/lavender_0"
+        app:layout_constraintBottom_toTopOf="@+id/newFAB"
+        app:layout_constraintEnd_toEndOf="@+id/newFAB"
+        app:srcCompat="@drawable/icon_create_a_channel" />
+
+    <TextView
+        android:id="@+id/joinBctTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textStyle="italic"
+        android:textColor="@color/black"
+        android:visibility="invisible"
+        android:background="@drawable/layout_fab_bg"
+        android:paddingHorizontal="@dimen/_5sdp"
+        android:paddingVertical="@dimen/_5sdp"
+        android:text="Join a broadcast channel"
+        app:layout_constraintBottom_toBottomOf="@+id/joinBct"
+        app:layout_constraintEnd_toStartOf="@+id/joinBct"
+        app:layout_constraintTop_toTopOf="@+id/joinBct"
+        app:layout_constraintVertical_bias="0.4" />
+
+    <TextView
+        android:id="@+id/createBctTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textStyle="italic"
+        android:textColor="@color/black"
+        android:paddingHorizontal="@dimen/_5sdp"
+        android:paddingVertical="@dimen/_5sdp"
+        android:visibility="invisible"
+        android:background="@drawable/layout_fab_bg"
+        android:text="Create a broadcast channel"
+        app:layout_constraintBottom_toBottomOf="@+id/createBct"
+        app:layout_constraintEnd_toStartOf="@+id/createBct"
+        app:layout_constraintTop_toTopOf="@+id/createBct"
+        app:layout_constraintVertical_bias="0.4" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

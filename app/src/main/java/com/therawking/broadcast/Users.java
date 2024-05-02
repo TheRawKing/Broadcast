@@ -1,8 +1,23 @@
 package com.therawking.broadcast;
 
 public class Users {
-    String EMail,Password,UserID,Username,LastMessage,Status;
-    public Users(){}
+    String UserID,EMail,Password, Name,ImageURI;
+
+    public Users(String UserID, String EMail, String Password, String Username, String ImageURI){
+        this.UserID = UserID;
+        this.EMail = EMail;
+        this.Password = Password;
+        this.Name = Username;
+        this.ImageURI = ImageURI;
+    }
+
+    public String getUserID() {
+        return UserID;
+    }
+
+    public void setUserID(String userID) {
+        UserID = userID;
+    }
 
     public String getEMail() {
         return EMail;
@@ -20,35 +35,16 @@ public class Users {
         Password = password;
     }
 
-    public String getUserID() {
-        return UserID;
+    public String getName() {
+        return Name;
     }
 
-    public void setUserID(String userID) {
-        UserID = userID;
+    public void setName(String name) {
+        Name = name;
     }
 
-    public String getUsername() {
-        return Username;
-    }
+    public String getImageURI() { return ImageURI; }
 
-    public void setUsername(String username) {
-        Username = username;
-    }
+    public void setImageURI(String imageURI) { ImageURI = imageURI; }
 
-    public String getLastMessage() {
-        return LastMessage;
-    }
-
-    public void setLastMessage(String lastMessage) {
-        LastMessage = lastMessage;
-    }
-
-    public String getStatus() {
-        return Status;
-    }
-
-    public void setStatus(String status) {
-        Status = status;
-    }
 }

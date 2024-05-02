@@ -5,11 +5,12 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
-    tools:context=".splash_screen">
+    android:background="@color/white_blue"
+    tools:context=".splash_screen"
+    android:theme="@style/Base.Theme.Broadcast">
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/appIcon"
         android:layout_width="@dimen/_120sdp"
         android:layout_height="@dimen/_120sdp"
         app:layout_constraintBottom_toBottomOf="parent"

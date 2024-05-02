@@ -2,4 +2,21 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="red">#FF0000</color>
+    <color name="light_yellow">#FFFFFF64</color>
+    <color name="light_green">#FF77FF63</color>
+    <color name="white_blue">#FFB4D2FF</color>
+    <color name="cyan">#FF00C3D5</color>
+    <color name="lavender_0">#BAA2D6</color>
+    <color name="lavender_1">#FF966FD6</color>
+    <color name="lavender_2">#FFB793F0</color>
+    <color name="lavender_3">#FF7D54AE</color>
+    <color name="lavender_4">#FFBE55BF</color>
+    <color name="lavender_5">#8692F7</color>
+    <color name="lavender_6">#E5C5EE</color>
+    <color name="dark_gray">#AAAAAA</color>
+    <color name="dark_blue">#FF030430</color>
+    <color name="dark_green">#FF2B611A</color>
+    <color name="dark_yellow">#FF736D00</color>
+
 </resources>
