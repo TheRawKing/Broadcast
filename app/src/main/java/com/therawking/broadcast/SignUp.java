@@ -34,7 +34,7 @@ import com.theartofdev.edmodo.cropper.CropImageView;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
-public class sign_up_screen extends AppCompatActivity {
+public class SignUp extends AppCompatActivity {
     Button to_Login,proceed_Signing_Up;
     EditText user_name, new_Email, set_Pass, re_Pass;
     FirebaseAuth auth;
@@ -48,19 +48,11 @@ public class sign_up_screen extends AppCompatActivity {
     String img_URI;
     ProgressDialog progress_Dialog;
 
-    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
         auth = FirebaseAuth.getInstance();
-        setContentView(R.layout.activity_sign_up_screen);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
-
+        setContentView(R.layout.activity_sign_up);
         to_Login = findViewById(R.id.toLogin);
         proceed_Signing_Up = findViewById(R.id.proceedSigningUp);
         user_name = findViewById(R.id.username);
@@ -90,7 +82,7 @@ public class sign_up_screen extends AppCompatActivity {
                 String repassword = re_Pass.getText().toString();
 
                 if (TextUtils.isEmpty(mail) || TextUtils.isEmpty(name) || TextUtils.isEmpty(password) || TextUtils.isEmpty(repassword)){
-                    Toast.makeText(sign_up_screen.this, "Some fields are still empty!!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(SignUp.this, "Some fields are still empty!!", Toast.LENGTH_SHORT).show();
                 } else if (!mail.matches(emailPat)) {
                     new_Email.setError("Type a valid e-mail address.");
                 }
@@ -112,7 +104,7 @@ public class sign_up_screen extends AppCompatActivity {
                                 database = FirebaseDatabase.getInstance();
                                 storage = FirebaseStorage.getInstance();
                                 ref = database.getReference().child("Users").child(id);
-                                stoRef = storage.getReference().child("Uploads").child(id);
+                                stoRef = storage.getReference().child("UserDP").child(id);
                                 if (imageURI != null) {
                                     stoRef.putFile(imageURI).addOnCompleteListener(new OnCompleteListener<UploadTask.TaskSnapshot>() {
                                         @Override
@@ -127,14 +119,14 @@ public class sign_up_screen extends AppCompatActivity {
                                                             @Override
                                                             public void onComplete(@NonNull Task<Void> task) {
                                                                 if (task.isSuccessful()) {
-                                                                    Toast.makeText(sign_up_screen.this, "Successfully Signed Up", Toast.LENGTH_SHORT).show();
+                                                                    Toast.makeText(SignUp.this, "Successfully Signed Up", Toast.LENGTH_SHORT).show();
                                                                     progress_Dialog.dismiss();
-                                                                    android.content.Intent intent = new android.content.Intent(sign_up_screen.this, MainActivity.class);
+                                                                    android.content.Intent intent = new android.content.Intent(SignUp.this, MainActivity.class);
                                                                     startActivity(intent);
                                                                     finish();
                                                                 } else {
                                                                     progress_Dialog.dismiss();
-                                                                    Toast.makeText(sign_up_screen.this, task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                                                                    Toast.makeText(SignUp.this, task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                                                                 }
                                                             }
                                                         });
@@ -150,14 +142,14 @@ public class sign_up_screen extends AppCompatActivity {
                                         @Override
                                         public void onComplete(@NonNull Task<Void> task) {
                                             if (task.isSuccessful()) {
-                                                Toast.makeText(sign_up_screen.this, "Successfully Signed Up", Toast.LENGTH_SHORT).show();
+                                                Toast.makeText(SignUp.this, "Successfully Signed Up", Toast.LENGTH_SHORT).show();
                                                 progress_Dialog.dismiss();
-                                                android.content.Intent intent = new android.content.Intent(sign_up_screen.this, MainActivity.class);
+                                                android.content.Intent intent = new android.content.Intent(SignUp.this, MainActivity.class);
                                                 startActivity(intent);
                                                 finish();
                                             } else {
                                                 progress_Dialog.dismiss();
-                                                Toast.makeText(sign_up_screen.this, task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                                                Toast.makeText(SignUp.this, task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                                             }
                                         }
                                     });
@@ -165,7 +157,7 @@ public class sign_up_screen extends AppCompatActivity {
 
                             } else {
                                 progress_Dialog.dismiss();
-                                Toast.makeText(sign_up_screen.this, task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                                Toast.makeText(SignUp.this, task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                             }
                         }
                     });
@@ -176,12 +168,11 @@ public class sign_up_screen extends AppCompatActivity {
         to_Login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                android.content.Intent var = new android.content.Intent(sign_up_screen.this, login_screen.class);
+                android.content.Intent var = new android.content.Intent(SignUp.this, Login.class);
                 startActivity(var);
                 finish();
             }
         });
-
 
     }
 

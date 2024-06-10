@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/CreateNewBroadcast"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/colorSecondary"
+    android:theme="@style/Base.Theme.Broadcast"
+    android:statusBarColor="?attr/colorPrimary"
+    android:navigationBarColor="?attr/colorPrimary"
+    tools:context=".CreateNewBroadcast">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/MyToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/colorPrimary"
+            android:minHeight="?attr/actionBarSize"
+            app:title="Create A Broadcast Channel"
+            app:titleTextColor="?attr/colorSecondary" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/channelDP"
+        android:layout_width="@dimen/_80sdp"
+        android:layout_height="@dimen/_80sdp"
+        android:layout_marginTop="@dimen/_70sdp"
+        android:background="@drawable/layout_fab_bg"
+        android:src="@drawable/photocamera"
+        app:civ_border_color="@color/lavender_0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.500"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appBarLayout2" />
+
+
+    <EditText
+        android:id="@+id/channelID"
+        android:layout_width="@dimen/_300sdp"
+        android:layout_height="@dimen/_32sdp"
+        android:layout_marginTop="@dimen/_50sdp"
+        android:background="@drawable/layout_custom_input"
+        android:hint="Enter unique channel ID"
+        android:inputType="text"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:textColor="@color/lavender_3"
+        android:textStyle="italic"
+        app:layout_constraintHorizontal_bias="0.500"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/channelDP" />
+
+    <EditText
+        android:id="@+id/channelName"
+        android:layout_width="@dimen/_300sdp"
+        android:layout_height="@dimen/_32sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:background="@drawable/layout_custom_input"
+        android:hint="Enter channel name"
+        android:inputType="text"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:textColor="@color/lavender_3"
+        android:textStyle="italic"
+        app:layout_constraintHorizontal_bias="0.500"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/channelID" />
+
+    <EditText
+        android:id="@+id/channelDescription"
+        android:layout_width="@dimen/_300sdp"
+        android:layout_height="@dimen/_100sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:background="@drawable/layout_custom_input"
+        android:hint="Add channel description (Optional)"
+        android:inputType="text"
+        android:paddingTop="@dimen/_5sdp"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:textColor="@color/lavender_3"
+        android:textStyle="italic"
+        android:gravity="start"
+        app:layout_constraintHorizontal_bias="0.500"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/channelName" />
+
+    <Button
+        android:id="@+id/createChannel"
+        android:layout_width="@dimen/_75sdp"
+        android:layout_height="@dimen/_25sdp"
+        android:layout_marginTop="@dimen/_25sdp"
+        android:background="@drawable/layout_btn_green"
+        android:text="Create Channel"
+        android:textColor="#ff2b611a"
+        android:textStyle="italic"
+        android:paddingLeft="12dp"
+        android:paddingRight="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.500"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/channelDescription"
+        app:layout_constraintVertical_bias="0.0" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

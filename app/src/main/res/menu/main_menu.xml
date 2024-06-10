@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item app:showAsAction="always"
         android:icon="@drawable/icon_three_dot_menu"
-        android:title="TODO">
+        android:title="Options">
         <menu>
             <item
                 android:title="Settings"
